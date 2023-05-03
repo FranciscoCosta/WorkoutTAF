@@ -1,11 +1,45 @@
-import './App.scss';
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import { Navbar } from './components';
+import { Navbar, Footer } from './components/index';
+import {
+  Home,
+  Login,
+
+} from './pages/index';
 
 function App() {
+  // eslint-disable-next-line react/no-unstable-nested-components
+  function Layout() {
+    return (
+      <>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </>
+    );
+  }
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path: '/login',
+          element: <Login />,
+        },
+      ],
+    },
+  ]);
   return (
-    <Navbar />
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
