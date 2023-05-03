@@ -1,9 +1,12 @@
-import './App.css'
-
+import './App.scss'
+import React from 'react'
+import { Navbar } from './components'
 function App() {
 
   return (
-    <>WorkoutTAF</>
+    <>
+    <Navbar/>
+    </>
   )
 }
 
