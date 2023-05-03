@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.scss';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { Navbar, Footer } from './components/index';
