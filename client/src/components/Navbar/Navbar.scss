@@ -3,6 +3,9 @@
     height: 10rem;
     background: var(--black-color);
     position: relative;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     .Navbar__container{
         display: flex;
         flex-direction: row;
@@ -129,6 +132,7 @@
     }
 
     @media (min-width: 487px) and (max-width: 1400px){
+        border: none;
         .Navbar__container{
             width: 95%;
             .Navbar__container__logo{
@@ -147,7 +151,8 @@
         }
         &.active{
         height: 100vh;
-        width: 70%;
+        width: 50%;
+        min-width: 20rem;
         right: 0;
         position: fixed;
         background-color: red;
@@ -170,10 +175,15 @@
                     align-items: center;
 
                     div{
+                        transition: 0s all;
                         li{
-                            div{
+                            .div{
                                 display: none;
                             }
+                        }
+                        
+                        :hover{
+                            transition: 0s all;
                         }
                     }
                 }
@@ -188,7 +198,11 @@
                     font-weight: 600;
                     border: none;
                     background-color: var(--red-color);
-                
+                    transition: 0s all;
+
+                    :hover{
+                        border: none;
+                    }
                 }
                 .Hamburger__menu{
                     .menu{
@@ -198,11 +212,11 @@
                             animation: drop 0.7s cubic-bezier(.36,.07,.19,.97);
                             transform: rotate(-45deg);
                             @keyframes drop {
-                                0% { transform: rotate(-45deg); }
-                                15% { transform: rotate(-50deg); }
-                                30% { transform: rotate(-40deg); }
-                                45% { transform: rotate(-45deg); }
-                                60% { transform: rotate(-40deg); }
+                                0% { transform: rotate(-75deg); }
+                                15% { transform: rotate(-30deg); }
+                                30% { transform: rotate(-60deg); }
+                                45% { transform: rotate(-40deg); }
+                                60% { transform: rotate(-50deg); }
                                 75% { transform: rotate(-45deg); }
                                 100% { transform: rotate(-45deg); }
                                 
@@ -214,6 +228,13 @@
         }
         
     }
+    }
+
+    @media screen and (max-width:486px){
+        width: 100vw;
+        height: 50px;
+        bottom: 100vh;
+
 
     }
 }
