@@ -77,18 +77,24 @@
       z-index: 10;
       align-self: flex-end;
       margin-bottom: 20rem;
-      margin-left: 2rem;
+      margin-left: 5rem;
+      line-height: 7rem;
       .Hero__CTO {
         display: flex;
         flex-direction: column;
         
         h1 {
-          font-size: 4.7rem;
-          text-transform: uppercase;
+          font-size: 5.5rem;
+          
           letter-spacing: 1.5px;
           color: var(--red-color);
           margin-bottom: 2rem;
-          font-weight: 900;
+          font-weight: 600;
+
+          span{
+            font-size: 4rem;
+            margin-left: 1rem;
+          }
         }
         button{
           padding: 0.5rem 1rem;

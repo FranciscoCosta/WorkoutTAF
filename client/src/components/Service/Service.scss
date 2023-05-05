@@ -1,0 +1,117 @@
+.Services {
+  min-height: 100vh;
+  background-color: var(--white-color);
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+
+  .Services__container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    h1 {
+      font-size: 6rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin: 0;
+      color: var(--black-color);
+    }
+
+    .Services__container__services {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      width: 100%;
+
+      .Services__container__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        width: 30rem;
+        height: 43rem;
+        border-radius: 2rem;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        padding: 2rem 1rem;
+        background-color: var(--black-color);
+
+        h2 {
+          font-size: 3rem;
+          text-align: center;
+          color: var(--white-color);
+          margin-bottom: 0.5rem;
+        }
+        svg {
+          font-size: 5rem;
+          color: var(--red-color);
+          border-radius: 50%;
+          margin-bottom: 1rem;
+        }
+        p {
+          color: var(--red-color);
+          font-size: 2rem;
+          text-align: center;
+          font-weight: 600;
+          h5 {
+            font-size: 2rem;
+            text-decoration: line-through;
+          }
+          span {
+            color: var(--white-color);
+          }
+        }
+        .green {
+          color: var(--green-color);
+          font-weight: 600;
+        }
+        ul {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          width: 100%;
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: start;
+          min-height: 10rem;
+          li {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white-color);
+            margin-bottom: 0.5rem;
+            text-align: center;
+          }
+        }
+        button {
+          width: 100%;
+          height: 4rem;
+          border: none;
+          border-radius: 2rem;
+          background-color: var(--red-color);
+          color: var(--white-color);
+          font-size: 1.5rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          align-self: flex-end;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background-color: var(--white-color);
+            color: var(--red-color);
+          }
+        }
+      }
+    }
+  }
+}

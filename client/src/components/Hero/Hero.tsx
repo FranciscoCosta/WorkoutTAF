@@ -39,7 +39,10 @@ function Hero() {
             transition={{ duration: 1.2 }}
             className="Hero__CTO"
           >
-            <h1>Comece a sua jornada hoje</h1>
+            <h1>
+              Comece a sua jornada hoje
+              <span>👊</span>
+            </h1>
             <button type="button">Saiba Mais</button>
           </motion.div>
         </div>
