@@ -6,6 +6,7 @@
     position: fixed;
     top: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 100;
     .Navbar__container{
         display: flex;
         flex-direction: row;
@@ -133,6 +134,7 @@
 
     @media (min-width: 487px) and (max-width: 1400px){
         border: none;
+        height: 6rem;
         .Navbar__container{
             width: 95%;
             .Navbar__container__logo{

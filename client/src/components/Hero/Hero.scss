@@ -1,0 +1,120 @@
+.Hero {
+  padding-top: 10rem;
+  min-height: 100vh;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .Hero__container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    .Hero__container-logo {
+      display: flex;
+      justify-content: end;
+      align-items: flex-start;
+      .Hero__logo__container {
+        background-color: var(--white-color);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0.75rem 1.5rem;
+        border-radius: 1rem;
+        height: max-content;
+        width: 25rem;
+        margin-top: 4rem;
+        margin-right: 4rem;
+        p {
+          font-size: 2.5rem;
+          font-weight: 1000;
+          margin: 0;
+          color: var(--black-color);
+        }
+        img {
+          width: 20rem;
+        }
+      }
+    }
+
+    .Hero__people__container {
+      align-self: center;
+      display: flex;
+      align-items: flex-end;
+      width: 50rem;
+      .Hero__center__container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+        height: 50rem;
+        align-self: flex-start;
+        width: 50rem;
+        margin-top: 9.2rem;
+        .hero__img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          z-index: 1;
+        }
+        .overlay_circle {
+          position: absolute;
+          left: 0%;
+          bottom: 0;
+          z-index: 0;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .Hero__info__container {
+      display: flex;
+      width: 50rem;
+      z-index: 10;
+      align-self: flex-end;
+      margin-bottom: 20rem;
+      margin-left: 2rem;
+      .Hero__CTO {
+        display: flex;
+        flex-direction: column;
+        
+        h1 {
+          font-size: 4.7rem;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          color: var(--red-color);
+          margin-bottom: 2rem;
+          font-weight: 900;
+        }
+        button{
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 1.5rem;
+          background-color: transparent;
+          color: var(--white-color);
+          border: 1px solid var(--red-color);
+          font-size: 1.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          width: 250px;
+          height: 60px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          margin-left: 1rem;
+          align-self: center;
+          &:hover{
+              animation: bellshake 0.7s cubic-bezier(.36,.07,.19,.97);
+              border: 1px solid red;
+              background-color: var(--red-color);
+              color: var(--white-color);
+          }
+      }
+      }
+    }
+  }
+}
