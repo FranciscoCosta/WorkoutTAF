@@ -7,7 +7,7 @@
   justify-content: center;
 
   .Services__container {
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,7 +16,7 @@
     height: 100%;
 
     h1 {
-      font-size: 6rem;
+      font-size: 4rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin: 0;
@@ -45,7 +45,7 @@
         background-color: var(--black-color);
 
         h2 {
-          font-size: 3rem;
+          font-size: 2rem;
           text-align: center;
           color: var(--white-color);
           margin-bottom: 0.5rem;

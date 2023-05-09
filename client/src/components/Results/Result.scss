@@ -1,20 +1,21 @@
 .Result{
     background-color: var(--black-color);
-    min-height: 100vh;
+    min-height: max-content;
     width: 100vw;
     overflow-x: hidden;
 
     .Result__container{
-        margin-top: 4rem;
+        margin-top: 2rem;
         display: flex;
         align-items: center;
         justify-content: start;
         flex-direction: column;
         width: 100%;
         overflow-x: hidden;
-        height: 100vh;
+        height: max-content;
+        margin-bottom: 2rem;
         h1 {
-            font-size: 6rem;
+            font-size: 5rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 4rem;

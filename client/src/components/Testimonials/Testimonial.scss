@@ -1,0 +1,91 @@
+.Testimonial{
+    width: 100%;
+    min-height: 60vh;
+
+    .Testimonial__container{
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        h1 {
+            font-size: 5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2rem;
+            color: var(--white-color);
+        
+        }
+        
+        .Testimonial__container__testimonials{
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            
+            .Testimonial__container__card__content{
+                display: flex;
+                flex-direction: row;
+                max-width: 600px;
+                height: 200px;
+                border: 1px solid white;
+                background-color: var(--white-color);
+                border-radius: 15px;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                cursor: pointer;
+
+
+                .Testimonial__container__card__left{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1rem 0.5rem;
+                    gap: 1rem;
+                    img{
+                        border: 1px rgba(0, 0, 0, 0.5) solid;
+                        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+                        height: 6rem;
+                        width: 6rem;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+                    p{  
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: var(--black-color);
+                    }
+                }
+                .Testimonial__container__card__right{
+                    padding: 1rem;
+                    p{
+                        color: var(--black-color);
+                        font-size: 1.4rem;
+                        font-style: italic;
+                        font-weight: 400;
+                    }
+                    span{
+                        color: var(--red-color);
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        margin-right: 20px;
+                        margin-bottom: 10px;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+
+                    }
+                }
+            }
+        }
+    }
+
+}

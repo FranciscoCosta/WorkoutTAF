@@ -5,6 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import React from 'react';
 import './Result.scss';
 import carouselItems from '../../data/Results';
+import Testimonial from '../Testimonials/Testimonial';
 
 const responsive = {
   superLargeDesktop: {
@@ -45,6 +46,7 @@ function Result() {
           </Carousel>
         </div>
       </div>
+      <Testimonial />
     </div>
   );
 }
