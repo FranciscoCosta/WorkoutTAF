@@ -2,8 +2,10 @@ import { MdOutlineFitnessCenter } from 'react-icons/md';
 import React, { useState } from 'react';
 import './Navbar.scss';
 import { logo } from '../../assets/index';
+import { useNavigate } from 'react-router';
 
 function Navbar() {
+  const navigate = useNavigate();
   const currentUser = localStorage.getItem('currentUser');
   const parsedUser = currentUser ? JSON.parse(currentUser) : null;
 
@@ -17,7 +19,11 @@ function Navbar() {
     <div className={!navbarActive ? 'Navbar' : 'Navbar active'}>
       <div className="Navbar__container">
         <div className="Navbar__container__logo">
-          <img src={logo} alt="logo-workouttaf" />
+          <img src={logo} alt="logo-workouttaf" onClick={
+            () => {
+              navigate('/');
+            }
+          }/>
         </div>
         <div className="Navbar__container__links">
           <ul>
@@ -43,6 +49,10 @@ function Navbar() {
             <li>
               <button
                 type="button"
+                onClick={() => {
+                  navigate('/login');
+                }
+                }
               >
                 Entrar
               </button>

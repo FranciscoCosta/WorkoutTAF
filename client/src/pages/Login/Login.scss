@@ -1,0 +1,138 @@
+.Login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10rem;
+  min-height: 100vh;
+  background-image: url("../../assets/background_login.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+  .Login__container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: absolute;
+      top: 10%;
+      padding: 2rem 4rem;
+      border-radius: 0.25rem;
+      background-color: rgba(255, 255, 255, 0.85);
+      height: 36rem;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      img {
+        width: 22rem;
+        margin-bottom: 2rem;
+      }
+      label {
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        color: var(--black-color);
+        font-size: 2rem;
+        gap: 0.5rem;
+        width: 90%;
+        position: relative;
+        button {
+          border: none;
+          outline: none;
+          position: absolute;
+          background-color: transparent;
+          top: 55%;
+          right: 0;
+          box-shadow: none;
+          svg {
+            font-size: 1.5rem;
+            color: var(--red-color);
+            cursor: pointer;
+            background-color: var(--white-color);
+          }
+        }
+        input {
+          font-family: 'Roboto', sans-serif;
+          width: 25rem;
+          height: 3rem;
+          border: none;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+          border-radius: 0.25rem;
+          padding-left: 1rem;
+          font-weight: 400;
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          background-color: var(--white-color);
+          &:focus {
+            outline: none;
+            border: 1px solid var(--red-color);
+          }
+
+          &::placeholder {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: rgba(0, 0, 0, 0.5);
+          }
+
+          &:disabled {
+            background-color: var(--white-color);
+            color: rgba(0, 0, 0, 0.5);
+            cursor: not-allowed;
+          }
+        }
+      }
+      .button__login {
+        width: 25rem;
+        height: 3rem;
+        border: none;
+        text-transform: uppercase;
+        outline: none;
+        border-radius: 0.25rem;
+        background-color: var(--black-color);
+        color: var(--white-color);
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: var(--red-color);
+        }
+
+      }
+      p{
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: rgba(0, 0, 0, 0.5);
+        margin-top: 1rem;
+        color: var(--black-color);
+        cursor: pointer;
+      }
+
+      span{
+        font-weight: 600;
+        font-size: 1.4rem;
+        color: rgba(0, 0, 0, 0.5);
+        margin-top: 1rem;
+        color: var(--red-color);
+        cursor: pointer;
+      }
+    }
+  }
+}
