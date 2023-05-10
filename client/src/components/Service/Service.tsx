@@ -29,11 +29,6 @@ function Service() {
                 <br />
                 {service.price}
               </p>
-              <ul>
-                {service.bulletPoints.map((bulletPoint) => (
-                  <li key={bulletPoint}>{bulletPoint}</li>
-                ))}
-              </ul>
               <button type="button">Saiba Mais</button>
             </motion.div>
           ))}

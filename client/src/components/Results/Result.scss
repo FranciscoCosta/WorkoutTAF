@@ -5,7 +5,7 @@
     overflow-x: hidden;
 
     .Result__container{
-        margin-top: 2rem;
+        margin-top: 4rem;
         display: flex;
         align-items: center;
         justify-content: start;
@@ -13,17 +13,19 @@
         width: 100%;
         overflow-x: hidden;
         height: max-content;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
         h1 {
-            font-size: 5rem;
+            font-family: 'Lato', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             margin-bottom: 4rem;
             color: var(--white-color);
         }
         .Result__container__results{
             width: 60%;
-            height: max-content;
+            margin: 0 auto;
             border-radius: 20px;
             
         
