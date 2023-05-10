@@ -1,7 +1,11 @@
 .Hero {
   padding-top: 10rem;
-  min-height: 100vh;
-  background-color: var(--black-color);
+  background-image: url("../../assets/background_hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  backdrop-filter: blur(5px);
   color: var(--white-color);
   overflow-x: hidden;
   overflow-y: hidden;
@@ -10,97 +14,69 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     min-height: 100vh;
     position: relative;
+    width: 100%;
     .Hero__container-logo {
       display: flex;
       justify-content: end;
       align-items: flex-start;
+      margin-top: 4rem;
+      margin-right: 4rem;
       .Hero__logo__container {
-        background-color: var(--white-color);
+        background-color: rgba(255, 255, 255, 0.9); 
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding: 0.75rem 1.5rem;
-        border-radius: 1rem;
+        padding: 0.75rem 0.25rem;
+        border-radius: 10px;
         height: max-content;
-        width: 25rem;
-        margin-top: 4rem;
-        margin-right: 4rem;
+        width: 24rem;
         p {
-          font-size: 2.5rem;
+          font-size: 4rem;
+          text-align: center;
           font-weight: 1000;
           margin: 0;
           color: var(--black-color);
         }
         img {
-          width: 20rem;
-        }
-      }
-    }
-
-    .Hero__people__container {
-      align-self: center;
-      display: flex;
-      align-items: flex-end;
-      width: 50rem;
-      .Hero__center__container {
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        align-items: center;
-        height: 50rem;
-        align-self: flex-start;
-        width: 50rem;
-        margin-top: 9.2rem;
-        .hero__img {
-          height: 100%;
-          width: 100%;
-          object-fit: contain;
-          z-index: 1;
-        }
-        .overlay_circle {
-          position: absolute;
-          left: 0%;
-          bottom: 0;
-          z-index: 0;
-          width: 100%;
-          object-fit: cover;
+          width: 22rem;
         }
       }
     }
     .Hero__info__container {
       display: flex;
-      width: 50rem;
       z-index: 10;
       align-self: flex-end;
       margin-bottom: 20rem;
-      margin-left: 5rem;
-      line-height: 7rem;
+      width: 60rem;
       .Hero__CTO {
         display: flex;
         flex-direction: column;
+        margin-left: 10rem;
         
         h1 {
+          font-family: 'Lato', sans-serif;
           font-size: 5.5rem;
-          
-          letter-spacing: 1.5px;
-          color: var(--red-color);
+          text-transform: uppercase;
+          text-align: start;
+          letter-spacing: 1px;
+          color: var(--white-color);
           margin-bottom: 2rem;
-          font-weight: 600;
+          font-weight: 900;
 
           span{
-            font-size: 4rem;
-            margin-left: 1rem;
+            color: var(--red-color);
+            font-size: 7.5rem;
           }
         }
         button{
           padding: 0.5rem 1rem;
           border: none;
           border-radius: 1.5rem;
-          background-color: transparent;
+          background-color: rgba(255, 255, 255, 0.4);
+          backdrop-filter: blur(5px);
           color: var(--white-color);
           border: 1px solid var(--red-color);
           font-size: 1.8rem;
@@ -123,4 +99,32 @@
       }
     }
   }
+
+  @media (min-width: 487px) and (max-width: 1400px) {
+    .Hero__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+      gap: 10rem;
+      width: 100vw;
+
+      .Hero__container-logo{
+        align-self: center;
+        margin: 0;
+      }
+
+      .Hero__info__container{
+        align-self: center;
+        margin: 0 auto;
+        padding: 0;
+        .Hero__CTO{
+          margin: 0;
+        }
+      }
+    };
+
+}
 }
