@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hero.scss';
 import { motion } from 'framer-motion';
-import { logo_black, circle, hero } from '../../assets/index';
+import {  circle, hero, logo } from '../../assets/index';
 
 function Hero() {
   return (
@@ -14,7 +14,7 @@ function Hero() {
             className="Hero__logo__container"
           >
             <p>Nós somos</p>
-            <img src={logo_black} alt="logo workouttaf" />
+            <img src={logo} alt="logo workouttaf" />
           </motion.div>
         </div>
 
