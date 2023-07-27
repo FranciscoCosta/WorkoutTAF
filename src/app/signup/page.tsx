@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-import "./Signup.scss";
 const Signup = () => {
   const [user, setuser] = useState({
     email: "",

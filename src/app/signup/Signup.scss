@@ -1,6 +1,6 @@
 .Signup {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,6 +60,7 @@
           font-size: 1.4rem;
           padding: 0.25rem 1rem;
           line-height: 1.8rem;
+          font-weight: 600;
           color: var(--white-color);
         }
       }
