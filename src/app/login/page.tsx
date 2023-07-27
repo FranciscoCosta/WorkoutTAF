@@ -4,28 +4,47 @@ import "./Login.scss";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [user, setuser] = useState({
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
   const [viewPasswords, setviewPasswords] = useState(false);
+  const [buttonDisable, setbuttonDisable] = useState(true);
+  const router = useRouter();
 
+  const verifyForm = () => {
+    if (
+      user.email.length > 0 &&
+      user.password.length > 0
+    ) {
+      setbuttonDisable(false);
+    } else {
+      setbuttonDisable(true);
+    }
+  };
   const onLogin = async (e: any) => {
     e.preventDefault();
     try {
-    } catch (error) {
-      console.log(error);
+      const response = await axios.post("/api/users/login", user);
+      toast.success("Login realizado com sucesso!");
+      router.push("/");
+    } catch (error: any) {
+      toast.error(error.response.data.error);
     }
   };
+
+  useEffect(() => {
+    verifyForm();
+  }, [user]);
 
   const handleViewPasswords = () => {
     console.log(viewPasswords);
@@ -49,7 +68,7 @@ const Login = () => {
               WORKOUT<span>TAF</span>
             </h1>
             <p>
-            De volta aos treinos? 
+              De volta aos treinos?
               <br /> Faça o login e continue sua evolução!
             </p>
           </div>
@@ -91,8 +110,11 @@ const Login = () => {
             </div>
             <button
               type="button"
+              disabled={buttonDisable}
               onClick={(e) => onLogin(e)}
-              className="Login__btn"
+              className={
+                buttonDisable ? "Login__button-disable" : "Login__btn"
+              }
             >
               Entrar
             </button>

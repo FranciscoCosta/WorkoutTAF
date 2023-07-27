@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     const userExists = await User.findOne({ email });
     if (userExists) {
       return NextResponse.json(
-        { error: "Email já cadastrado" },
+        { error: "Email já cadastrado." },
         { status: 400 }
       );
     }
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
     console.log(savedUser);
 
     return NextResponse.json(
-      { message: "Usuário criado com sucesso" },
+      { message: "Usuário criado com sucesso." },
       { status: 201 }
     );
   } catch (error: any) {
