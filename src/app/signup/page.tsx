@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -20,61 +21,72 @@ const Signup = () => {
     firstName: "",
     lastName: "",
   });
-  const [error, setError] = useState("");
+
   const [viewPasswords, setviewPasswords] = useState(false);
   const [buttonDisable, setbuttonDisable] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     verifyForm();
   }, [user]);
 
-
   const verifyForm = () => {
-    if (user.firstName.length > 0 && user.lastName.length > 0 && user.email.length > 0 && user.password.length > 0 && user.confirmPassword.length > 0) {
+    if (
+      user.firstName.length > 0 &&
+      user.lastName.length > 0 &&
+      user.email.length > 0 &&
+      user.password.length > 0 &&
+      user.confirmPassword.length > 0
+    ) {
       setbuttonDisable(false);
     } else {
       setbuttonDisable(true);
     }
-  }
+  };
 
   const verifyValues = () => {
     if (user.password !== user.confirmPassword) {
-      setError("As senhas não coincidem");
+      toast.error("As senhas não coincidem");
       return false;
     }
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!user.password.match(passwordRegex)) {
-      setError(`A senha deve conter no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 número e 1 caractere especial`);
+      toast.error(
+        `A senha deve conter no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 número e 1 caractere especial`
+      );
       return false;
     }
     if (user.password.length < 6) {
-      setError("A senha deve conter no mínimo 6 caracteres");
+      toast.error("A senha deve conter no mínimo 6 caracteres!");
       return false;
     }
     const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if (!user.email.match(regexEmail)) {
-      setError("Email inválido");
+      toast.error("Email inválido");
       return false;
     }
     if (user.firstName.length < 3) {
-      setError("O nome deve conter no mínimo 3 caracteres");
+      toast.error("O nome deve conter no mínimo 3 caracteres!");
       return false;
     }
     return true;
-  }
-
-
-
-
-
-
+  };
 
   const onSignUp = async (e: any) => {
     const verified = verifyValues();
     e.preventDefault();
     try {
-    } catch (error) {
-      console.log(error);
+      const response = await axios.post("/api/users/signup", user);
+      if (response.data) {
+        toast.success("Cadastro realizado com sucesso!");
+        setTimeout(() => {
+          router.push("/login");
+        }, 2000);
+      } else {
+        toast.error("Erro ao cadastrar!");
+      }
+    } catch (error : any) {
+      toast.error(error.message || "Erro ao cadastrar!");
     }
   };
 
@@ -185,7 +197,9 @@ const Signup = () => {
               type="button"
               disabled={buttonDisable}
               onClick={(e) => onSignUp(e)}
-              className={buttonDisable ? "Signup__button-disable" : "Signup__btn"}
+              className={
+                buttonDisable ? "Signup__button-disable" : "Signup__btn"
+              }
             >
               Cadastrar
             </button>
@@ -196,10 +210,6 @@ const Signup = () => {
               <FcGoogle />
               <button className="Google-btn">Entrar com o Google</button>
             </div>
-            {error && 
-            <div className="Signup__error">
-              <p>{error}</p>
-            </div>}
           </form>
         </div>
       </div>

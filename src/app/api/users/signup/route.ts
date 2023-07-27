@@ -1,19 +1,15 @@
 import { connect } from "@/dbConfig/dbConfig";
-
 import User from "../../../ models/userModel";
-
 import { NextRequest, NextResponse } from "next/server";
 import { UserRequestBody } from "@/app/types/types";
-
 import bcrypt from "bcryptjs";
 
-import { error } from "console";
 
 connect();
 
 export async function POST(request: NextRequest) {
   try {
-    const reqBody: any = await request.body;
+    const reqBody = await request.json();
     const { firstName, lastName, email, password } = reqBody;
 
     //Check if user already exists
