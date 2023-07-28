@@ -23,5 +23,46 @@
                 object-fit: contain;
             }
         }
+
+        .Navbar__links{
+
+            .Navbar__Login-Logout-container{
+
+                .Navbar__name-container{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+
+                    h2{
+                        margin-right: 0.5rem;
+                        color: var(--white-color);
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                    }
+                }
+
+                button{
+                    background-color: var(--red-color);
+                    color: white;
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                    letter-spacing: 2px;
+                    font-weight: bold;
+                    transition: all 0.3s ease-in-out;
+                    outline: none;
+                    margin-left: 1rem;
+                    width: 120px;
+
+                    &:hover{
+                        background-color: var(--white-color);
+                        color: var(--red-color);
+                    }
+                }
+            }
+        }
     }
 }
