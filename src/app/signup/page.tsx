@@ -74,6 +74,7 @@ const Signup = () => {
 
   const onSignUp = async (e: any) => {
     const verified = verifyValues();
+    if (!verified) return;
     e.preventDefault();
     try {
       const response = await axios.post("/api/users/signup", user);

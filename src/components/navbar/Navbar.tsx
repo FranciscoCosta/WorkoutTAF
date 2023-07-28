@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.scss';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter,usePathname } from 'next/navigation';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
@@ -18,6 +18,8 @@ const Navbar = () => {
   const [islogin, setislogin] = useState(false);
   const [isLoading, setisLoading] = useState(true);
   const [user, setuser] = useState({} as any);
+
+  const pathname = usePathname()
 
   const handleLogout = async () => {
     try {
@@ -48,7 +50,7 @@ const Navbar = () => {
 
   useEffect(() => {
     checkLogin();
-  }, [])
+  }, [pathname])
 
 
 
