@@ -78,16 +78,18 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await axios.post("/api/users/signup", user);
-      if (response.data) {
+      console.log(response);
+      if (response.status === 201) {
         toast.success("Cadastro realizado com sucesso!");
         setTimeout(() => {
           router.push("/login");
         }, 2000);
       } else {
-        toast.error("Erro ao cadastrar!");
+        console.log(response.data);
+        toast.error(response.data.error || "Erro ao cadastrar!!!");
       }
     } catch (error : any) {
-      toast.error(error.message || "Erro ao cadastrar!");
+      toast.error(error.response.data.error || "Erro ao cadastrar!");
     }
   };
 

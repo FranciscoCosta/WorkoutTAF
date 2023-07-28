@@ -28,7 +28,7 @@ const Navbar = () => {
       setislogin(false);
       setTimeout(() => {
         router.push("/login");
-      }, 2000);
+      }, 1000);
     } catch (error: any) {
       toast.error(error.response.data.message);
     }
