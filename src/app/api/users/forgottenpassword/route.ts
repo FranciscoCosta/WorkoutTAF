@@ -1,16 +1,17 @@
-
-
-import { NextRequest, NextResponse } from "next/server";
 import { connect } from "@/dbConfig/dbConfig";
-import User from "../../ models/userModel";
+import User from "../../../ models/userModel";
+import { NextRequest, NextResponse } from "next/server";
 import { sendEmail } from "@/helpers/mailer";
 
 connect();
 
 export async function POST(request: NextRequest) {
-    try{
-        const reqBody = await request.json();
-        const { email } = reqBody;
+  console.log("entrou no post");
+  try{
+    const reqBody = await request.json();
+      console.log(reqBody);
+      const { email } = reqBody;
+
 
         //Check if user already exists
         const userExists = await User.findOne({ email });
@@ -32,6 +33,7 @@ export async function POST(request: NextRequest) {
             { status: 201 }
           );
     }catch(error: any){
+      console.log(error)
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }

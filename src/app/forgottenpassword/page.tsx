@@ -15,7 +15,7 @@ const Forgottenpassword = () => {
   const verifyEmail = () => {
     const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if (!email.match(regexEmail)) {
-      toast.error("Email inválido");
+      toast.error("Email inválido.");
       return false;
     }
     return true;
@@ -26,9 +26,13 @@ const Forgottenpassword = () => {
     const isEmail = verifyEmail();
     if (!isEmail) return;
     try {
-      const response = await axios.post("/api/users/signup", email);
+      console.log(email);
+      const response = await axios.post("/api/users/forgottenpassword", {
+        email,
+      });
+      console.log(response);
       if (response.status === 201) {
-        toast.success("Email enviado com sucesso!");
+        toast.success("Email recuperar senha enviado com sucesso!");
         setTimeout(() => {
           router.push("/login");
         }, 2000);
