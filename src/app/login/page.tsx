@@ -108,6 +108,10 @@ const Login = () => {
               <p>Ainda não tem uma conta?</p>
               <Link href="/signup"> Cliquei aqui.</Link>
             </div>
+            <div className="Login__redirect-forgottenpassword">
+              <p>Esqueçeu a sua senha ?</p>
+              <Link href="/forgottenpassword"> Cliquei aqui.</Link>
+            </div>
             <button
               type="button"
               disabled={buttonDisable}

@@ -4,7 +4,7 @@ import { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
-  const isPublicPath = path === "/login" || path === "/signup" || path === "/verifyemail";
+  const isPublicPath = path === "/login" || path === "/signup" || path === "/verifyemail" || path === "/forgotpassword" || path === "/resetpassword";
 
   const home = path === "/";
 
@@ -20,5 +20,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/profile", "/login", "/signup", "/verifyemail"],
+  matcher: ["/", "/profile", "/login", "/signup", "/verifyemail", "/forgotpassword", "/resetpassword"],
 };

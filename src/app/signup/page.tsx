@@ -80,7 +80,7 @@ const Signup = () => {
       const response = await axios.post("/api/users/signup", user);
       console.log(response);
       if (response.status === 201) {
-        toast.success("Cadastro realizado com sucesso!");
+        toast.success("Email de confirmação de conta enviado!");
         setTimeout(() => {
           router.push("/login");
         }, 2000);
