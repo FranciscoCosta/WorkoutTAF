@@ -12,6 +12,8 @@ import Image from "next/image";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
+
+
 const Login = () => {
   const [user, setuser] = useState({
     email: "",
@@ -22,10 +24,7 @@ const Login = () => {
   const router = useRouter();
 
   const verifyForm = () => {
-    if (
-      user.email.length > 0 &&
-      user.password.length > 0
-    ) {
+    if (user.email.length > 0 && user.password.length > 0) {
       setbuttonDisable(false);
     } else {
       setbuttonDisable(true);
@@ -116,9 +115,7 @@ const Login = () => {
               type="button"
               disabled={buttonDisable}
               onClick={(e) => onLogin(e)}
-              className={
-                buttonDisable ? "Login__button-disable" : "Login__btn"
-              }
+              className={buttonDisable ? "Login__button-disable" : "Login__btn"}
             >
               Entrar
             </button>
@@ -132,6 +129,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+
     </div>
   );
 };

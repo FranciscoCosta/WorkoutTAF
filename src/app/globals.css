@@ -36,3 +36,12 @@
   .Home{
     width: 100%;
   }
+
+
+  .spacer{
+    aspect-ratio: 900/100;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }

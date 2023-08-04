@@ -1,5 +1,92 @@
-.Footer{
-    width: 100%;
-    overflow-x: hidden;
-    border: 1px solid red;
+.Footer {
+  width: 100%;
+  overflow-x: hidden;
+  height: max-content;
+
+  .Footer__container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin: 0 auto;
+
+    .Footer__container__left,
+    .Footer__container__center,
+    .Footer__container__right {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding-top: 2rem;
+      flex: 1;
+
+      p {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        color: rgb(44, 44, 44);
+      }
+
+      .Footer__title {
+        h1 {
+          color: var(--black-color);
+          font-size: 2.8rem;
+          font-weight: 800;
+          letter-spacing: 1.5px;
+
+          span {
+            color: var(--red-color);
+          }
+        }
+      }
+      .Footer__links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+        gap: 1rem;
+
+        a {
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+          font-weight: 400;
+        }
+      }
+      .Footer__description-social {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 1rem;
+        .social__container {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: #ebeef5;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+        }
+
+        .social__container:hover {
+          background-color: var(--red-color);
+        }
+
+        .social__container:hover .svg-social {
+          color: white;
+        }
+
+        .svg-social {
+          width: 30px;
+          height: 30px;
+          color: var(--black-color);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
 }

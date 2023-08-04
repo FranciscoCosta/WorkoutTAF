@@ -119,10 +119,10 @@
         .Signup__redirect-login {
           width: 80%;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: 0.25rem;
+          gap: 0.2rem;
           margin: 0.25rem auto;
 
           p {
@@ -132,13 +132,10 @@
             margin-right: 0.25rem;
           }
           a {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--red-color);
             text-decoration: none;
-            &:hover {
-              text-decoration: underline;
-            }
           }
         }
 

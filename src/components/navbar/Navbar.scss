@@ -4,6 +4,9 @@
     height: 120px;
     background-color: var(--black-color);
     overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     .Navbar__container{
         width: 90%;
@@ -14,10 +17,10 @@
         justify-content: space-between;
 
         .Navbar__logo-container{
-            
             width: 300px;
             height: 80px;
             position: relative;
+            cursor: pointer;
 
             .Navbar__logo-img{
                 object-fit: contain;

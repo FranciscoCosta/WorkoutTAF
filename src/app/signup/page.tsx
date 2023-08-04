@@ -206,13 +206,6 @@ const Signup = () => {
             >
               Cadastrar
             </button>
-            <div
-              className="Signup__google"
-              onClick={(e) => console.log("google")}
-            >
-              <FcGoogle />
-              <button className="Google-btn">Entrar com o Google</button>
-            </div>
           </form>
         </div>
       </div>
