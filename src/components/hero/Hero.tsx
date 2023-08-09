@@ -6,13 +6,13 @@ const Hero = () => {
     <div className="Hero__container">
         <div className="Hero__title">
             <h1>
-                Descobra
-                <br/>
-                o seu potencial
+              Seja o seu melhor
             </h1>
 
-        <div className="Hero__subtitle">
-            <p>Alcance o melhor de si mesmo com o WorkoutTAF e descubra o poder transformador de um corpo e mente em sintonia</p>
+        <div className="Hero__cto">
+            <button>
+              Inscreva-se
+            </button>
         </div>
         </div>
     </div>

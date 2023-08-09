@@ -4,5 +4,60 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    
+    .Hero__container{
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        h1{
+            font-size: 7rem;
+            color: var(--white-color);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-shadow: 2px 3px rgba(0, 0, 0, 1);
+            transform: scaleY(1.10);
+            letter-spacing: 2px;
+        }
+        .Hero__cto{
+
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            height: max-content;
+            margin-bottom: 5rem;
+
+            button{
+                background-color: var(--red-color);
+                color: white;
+                border: none;
+                padding: 0.5rem 2rem;
+                border-radius: 40px;
+                cursor: pointer;
+                font-size: 1.8rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                margin-right: 1rem;
+                margin-top: 0.2rem;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                transition: all 0.5s ease-in-out;
+                box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 1);
+
+
+                &:hover{
+                    background-color: var(--black-color);
+                    border: 1px solid var(--white-color);
+                    box-shadow: 2px 3px 5px 0px rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+    }
+
+
 }
