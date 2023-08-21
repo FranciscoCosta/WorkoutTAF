@@ -1,4 +1,4 @@
-import { Band, Hero, Why } from '@/components'
+import { Band, Hero, Why, About } from '@/components'
 import Image from 'next/image'
 //Francisco Costa 
 export default function Home() {
@@ -7,6 +7,7 @@ export default function Home() {
       <Hero />
       <Band />
       <Why />
+      <About />
     </main>
   )
 }
