@@ -1,0 +1,84 @@
+.Why {
+    background-color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .Why__container {
+        margin-top: 4rem;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 5rem;
+
+        .Why__title {
+            h1 {
+                color: var(--white-color);
+                font-size: 4rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+
+                span {
+                    font-weight: 900;
+
+                    span {
+                        color: var(--red-color);
+                    }
+                }
+            }
+        }
+
+        .Why__content {
+            display: flex;
+            flex-direction: row;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .Why__content__item {
+                height: 400px;
+                width: 400px;
+                border-radius: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: center;
+                background-color: #3e3d42;
+                padding: 2rem;
+                transition: all 0.3s ease-in-out;
+                cursor: arrow;
+
+                &.active {
+                    background-color: var(--red-color);
+                }
+
+                h2{
+                    color: var(--white-color);
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    margin-bottom: 1rem;
+                }
+                p{
+                    color: whitesmoke;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+                }
+                button{
+                    color: var(--white-color);
+                    font-size: 1rem;
+                    font-weight: 700;
+                    padding: 0.5rem 1rem;
+                    border-radius: 5px;
+                    border: none;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        scale: 1.2;
+                    }
+                }
+            }
+        }
+    }
+}
