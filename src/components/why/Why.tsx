@@ -39,7 +39,6 @@ const Why = () => {
               className={`Why__content__item ${index === activeItem ? "active" : ""}`}
               key={card.title}
               onMouseEnter={() => setActiveItem(index)}
-              onMouseLeave={() => setActiveItem(null)}
             >
               <div className="Why__content__item__icon">
                 <Image
