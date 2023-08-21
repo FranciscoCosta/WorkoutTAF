@@ -1,6 +1,7 @@
 .Hero{
     height: 100vh;
-    background-image: url("../../../public/assets/hero.png");
+    background-color: var(--black-color);
+    background-image: url("../../../public/assets/hero1.png");
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -20,8 +21,21 @@
             color: var(--white-color);
             font-weight: 900;
             text-align: center;
-            margin-bottom: 1rem;
             letter-spacing: 5px;
+            text-shadow: 1px 1px 3px black;
+        }
+        p{
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            color: var(--white-color);
+            font-weight: 400;
+            text-align: center;
+            font-style: italic;
+
+            letter-spacing: 2px;
+            width: 70%;
+            margin: 0 auto;
+            margin-bottom: 3rem;
         }
         .Hero__cto{
 
@@ -31,6 +45,7 @@
             justify-content: center;
             height: max-content;
             margin-bottom: 5rem;
+            border: none;
 
             button{
                 background-color: var(--red-color);
@@ -46,13 +61,12 @@
                 margin-top: 0.2rem;
                 border: 1px solid rgba(0, 0, 0, 0.2);
                 transition: all 0.5s ease-in-out;
-                box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 1);
+                border: 1px solid var(--black-color);
 
 
                 &:hover{
                     background-color: var(--black-color);
                     border: 1px solid var(--white-color);
-                    box-shadow: 2px 3px 5px 0px rgba(255, 255, 255, 0.5);
                 }
             }
         }

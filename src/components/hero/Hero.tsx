@@ -8,6 +8,9 @@ const Hero = () => {
             <h1>
               Seja o seu melhor
             </h1>
+            <p>
+            Consultorias Personalizadas , descubra o poder transformador de um corpo e mente em sintonia, conquistando seus objetivos fitness de forma única e motivadora.
+            </p>
 
         <div className="Hero__cto">
             <button>
