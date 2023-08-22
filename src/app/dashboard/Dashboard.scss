@@ -1,0 +1,83 @@
+.Dashboard {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--black-color);
+  color: white;
+
+  .Dashboard__container {
+    width: 80%;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .Dashboard__title {
+      h1 {
+        color: var(--white-color);
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 4rem;
+      }
+    }
+    .Dashboard__content {
+      display: flex;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(121, 109, 109, 0.5);
+      width: 100%;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        thead {
+          background-color: var(--red-color);
+          color: #ffffff;
+          font-weight: bold;
+          font-size: 1.3rem;
+          height: 3rem;
+          border: 1px solid #54585d;
+        }
+
+        tbody {
+          tr {
+            text-align: center;
+            color: var(--white-color);
+            height: 50px;
+
+            div{
+                display: flex;
+                flex-direction: row;
+                gap: 2rem;
+                margin: 0 auto;
+                align-items: center;
+                justify-content: center;
+              svg{
+                font-size: 1.2rem;
+              }
+                
+
+                .edit{
+                  color: #4ae54a;
+                  cursor: pointer;
+                }
+                .delete{
+                    color: red;
+                    cursor: pointer;
+                }
+            }
+            &:hover {
+              background-color: rgba(220, 20, 60, 0.391);
+              color: var(--white-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}

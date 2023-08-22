@@ -37,6 +37,7 @@ const PlansInfo = [
 ];
 
 const Plans = () => {
+
   const handlePlans = () => {
     window.open(
       "https://www.mfitpersonal.com.br/index?acao=page&tipo=1&page=18828&isCheckout=false",
@@ -70,7 +71,7 @@ const Plans = () => {
                 ))}
               </div>
               <div className="Plans__card-button">
-                <button onClick={() => handlePlans}>Comprar</button>
+                <button onClick={ handlePlans}>Comprar</button>
               </div>
             </div>
           ))}

@@ -28,6 +28,7 @@ const Hero = () => {
             <motion.button
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 1.5, delay: 2.5 }}
+            onClick={() => window.scrollTo({ top: 2900, behavior: "smooth" })}
             >Inscreva-se</motion.button>
           </div>
         </div>
