@@ -94,8 +94,13 @@
             
             .About__extras__images__item__border{
                 border: 2px solid var(--red-color);
-                padding: 10px; 
+                padding: 5px; 
                 border-radius: 50%;
+                transition: all 0.7s ease-in-out;
+                cursor: pointer;
+                &:hover{
+                    background-color: var(--red-color);
+                }
             
                 .About__extras__images__item{
                     position: relative;

@@ -1,0 +1,106 @@
+.Plans{
+    background-color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .Plans__container{
+        margin-top: 4rem;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 5rem;
+
+        .Plans__title {
+            align-self: center;
+            h1 {
+                color: var(--white-color);
+                font-size: 4rem;
+                font-weight: 700;
+                margin-bottom: 4rem;
+            }
+        }
+        .Plans__content{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .Plans__card{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+                height: 500px;
+                width: 450px;
+                .Plans__card-title{
+                    h2{
+                        color: var(--white-color);
+                        font-size: 1.7rem;
+                        font-weight: 700;
+                        margin-bottom: 2rem;
+                    }
+                }
+                .Plans__card-price{
+                    h3{
+                        text-align: center;
+                        color: var(--white-color);
+                        font-size: 2.5rem;
+                        font-weight: 700;
+                        margin-bottom: 2rem;
+
+                        span{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .Plans__card-points{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+
+                    .Plans__card-points-item{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: start;
+                        gap: 0.5rem;
+                        width: 100%;
+
+                        p{
+                            color: var(--white-color);
+                            font-size: 1rem;
+                            font-weight: 500;
+                        }
+                        svg{
+                            color: var(--white-color);
+                            font-size: 1.5rem;  
+                        }
+                    }
+                }
+                .Plans__card-button{
+                    button{
+                        margin-top: 3rem;
+                        background-color: var(--red-color);
+                        color: var(--white-color);
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        padding: 0.5rem 3rem;
+                        border-radius: 20px;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+
+                        &:hover{
+                            background-color: var(--white-color);
+                            color: var(--red-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
