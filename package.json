@@ -18,6 +18,7 @@
     "bcryptjs": "^2.4.3",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
+    "framer-motion": "^10.16.1",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.1",
     "next": "13.4.12",
