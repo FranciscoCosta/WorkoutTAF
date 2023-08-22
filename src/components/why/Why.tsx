@@ -20,6 +20,7 @@ const cardsInfo = [
     title: "Acompanhamento Online",
     text: "Acompanhamento online, com feedbacks semanais, para que você possa ter um melhor aproveitamento dos treinos e alcançar seus objetivos.",
   }
+  
 ]
 
 const Why = () => {
@@ -56,7 +57,7 @@ const Why = () => {
               </div>
               <div className="Why__content__item__button">
                 <button
-                onClick={window.open("https://www.mfitpersonal.com.br/index?acao=page&tipo=1&page=18828&isCheckout=false", "_blank")}
+                onClick={()=> window.open("https://www.mfitpersonal.com.br/index?acao=page&tipo=1&page=18828&isCheckout=false", "_blank")}
                 >Ver mais ↗</button>
                 </div>
             </div>

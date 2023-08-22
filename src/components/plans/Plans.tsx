@@ -58,7 +58,7 @@ const Plans = () => {
               </div>
               <div className="Plans__card-price">
                 <h3>
-                  {plan.price} <span>/2meses</span>
+                  {plan.price}<span>/2meses</span>
                 </h3>
               </div>
               <div className="Plans__card-points">

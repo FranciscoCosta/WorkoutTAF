@@ -5,6 +5,7 @@ import Band from "./band";
 import Why from "./why";
 import About from "./about";
 import Plans from "./plans";
+import Results from "./results";
 
 export {
     Navbar,
@@ -14,4 +15,5 @@ export {
     Why,
     About,
     Plans,
+    Results,
 }
