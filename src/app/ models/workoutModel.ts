@@ -22,3 +22,5 @@ const workoutSchema = new mongoose.Schema({
 });
 
 const Workout = mongoose.models.workout || mongoose.model("workout", workoutSchema);
+
+export default Workout;
