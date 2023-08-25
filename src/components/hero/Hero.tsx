@@ -20,8 +20,8 @@ const Hero = () => {
             whileInView={{ scale: [0, 1], opacity: [0, 1] }}
             transition={{ duration: 1.3, delay: 0 }}
           >
-            Descubra o poder transformador de um corpo e mente em sintonia,
-            conquistando seus objetivos fitness de forma única e motivadora.
+            "Descubra o poder transformador de um corpo e mente em sintonia,
+            conquistando seus objetivos fitness de forma única e motivadora."
           </motion.p>
 
           <div className="Hero__cto">
