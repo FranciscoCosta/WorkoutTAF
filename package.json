@@ -31,7 +31,9 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "react-modal": "^3.16.1",
+    "react-multi-carousel": "^2.8.4",
     "react-responsive-carousel": "^3.2.23",
+    "react-simply-carousel": "^9.0.4",
     "sass": "^1.64.1",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
