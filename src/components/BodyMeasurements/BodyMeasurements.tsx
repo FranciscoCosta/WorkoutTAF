@@ -15,6 +15,7 @@ const BodyMeasurements = () => {
     rightCalf: '',
     weight: '',
     height: '',
+    date: null,
   });
 
   const handleInputChange = (event) => {
