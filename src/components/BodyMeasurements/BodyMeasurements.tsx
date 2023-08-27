@@ -52,111 +52,135 @@ const BodyMeasurements = () => {
           <h1>Medidas Corporais</h1>
         </div>
         <div className='BodyMeasurements__container__content'>
-          <form onSubmit={handleSubmit}>
-            <label>
-              Peito:
-              <input
-                type='text'
-                name='chest'
-                value={measurements.chest}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Bíceps Esquerdo:
-              <input
-                type='text'
-                name='leftBiceps'
-                value={measurements.leftBiceps}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Bíceps Direito:
-              <input
-                type='text'
-                name='rightBiceps'
-                value={measurements.rightBiceps}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Cintura:
-              <input
-                type='text'
-                name='waist'
-                value={measurements.waist}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Quadril:
-              <input
-                type='text'
-                name='hip'
-                value={measurements.hip}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Coxa Esquerda:
-              <input
-                type='text'
-                name='leftThigh'
-                value={measurements.leftThigh}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Coxa Direita:
-              <input
-                type='text'
-                name='rightThigh'
-                value={measurements.rightThigh}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Panturrilha Esquerda:
-              <input
-                type='text'
-                name='leftCalf'
-                value={measurements.leftCalf}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Panturrilha Direita:
-              <input
-                type='text'
-                name='rightCalf'
-                value={measurements.rightCalf}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Peso:
+        <form onSubmit={handleSubmit}>
+          <div className='BodyMeasurements__upper'>
+          <div className='Measurements__form-group'>
+              <label htmlFor='weight'>Peso (kg)</label>
               <input
                 type='text'
                 name='weight'
+                id='weight'
+                placeholder='Peso'
                 value={measurements.weight}
                 onChange={handleInputChange}
               />
-            </label>
-            <label>
-              Altura:
+            </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='height'>Altura (cm)</label>
               <input
                 type='text'
                 name='height'
+                id='height'
+                placeholder='Altura'
                 value={measurements.height}
                 onChange={handleInputChange}
               />
-            </label>
-            <button type='submit'>Salvar Medições</button>
-          </form>
-          <div className='BodyMeasurements__container__content__image'>
-            a
             </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='chest'>Peito (cm)</label>
+              <input
+                type='text'
+                name='chest'
+                id='chest'
+                placeholder='Peito'
+                value={measurements.chest}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='leftBiceps'>Bíceps Esquerdo (cm)</label>
+              <input
+                type='text'
+                name='leftBiceps'
+                id='leftBiceps'
+                placeholder='Bíceps Esquerdo'
+                value={measurements.leftBiceps}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='rightBiceps'>Bíceps Direito (cm)</label>
+              <input
+                type='text'
+                name='rightBiceps'
+                id='rightBiceps'
+                placeholder='Bíceps Direito'
+                value={measurements.rightBiceps}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='waist'>Cintura (cm)</label>
+              <input
+                type='text'
+                name='waist'
+                id='waist'
+                placeholder='Cintura'
+                value={measurements.waist}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='hip'>Quadril (cm)</label>
+              <input
+                type='text'
+                name='hip'
+                id='hip'
+                placeholder='Quadril'
+                value={measurements.hip}
+                onChange={handleInputChange}
+              />
+            </div>
+            </div>
+            <div className='BodyMeasurements__lower'>
+            <div className='Measurements__form-group'>
+              <label htmlFor='leftThigh'>Coxa Esquerda (cm)</label>
+              <input
+                type='text'
+                name='leftThigh'
+                id='leftThigh'
+                placeholder='Coxa Esquerda'
+                value={measurements.leftThigh}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='rightThigh'>Coxa Direita (cm)</label>
+              <input
+                type='text'
+                name='rightThigh'
+                id='rightThigh'
+                placeholder='Coxa Direita'
+                value={measurements.rightThigh}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='leftCalf'>Panturrilha Esquerda (cm)</label>
+              <input
+                type='text'
+                name='leftCalf'
+                id='leftCalf'
+                placeholder='Panturrilha Esquerda'
+                value={measurements.leftCalf}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='rightCalf'>Panturrilha Direita (cm)</label>
+              <input
+                type='text'
+                name='rightCalf'
+                id='rightCalf'
+                placeholder='Panturrilha Direita'
+                value={measurements.rightCalf}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <button type='submit'>Salvar Medições</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
