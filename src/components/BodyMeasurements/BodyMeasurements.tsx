@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react';
 import './BodyMeasurements.scss';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const BodyMeasurements = () => {
   const [measurements, setMeasurements] = useState({
@@ -18,7 +20,7 @@ const BodyMeasurements = () => {
     date: null,
   });
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event : any) => {
     const { name, value } = event.target;
     setMeasurements((prevMeasurements) => ({
       ...prevMeasurements,
@@ -26,7 +28,14 @@ const BodyMeasurements = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleDateChange = (date : any) => {
+    setMeasurements((prevMeasurements) => ({
+      ...prevMeasurements,
+      date: date,
+    }));
+  };
+
+  const handleSubmit = (event :any) => {
     event.preventDefault();
     // Aqui você pode fazer o que quiser com os dados, como enviar para o servidor ou realizar algum processamento local
     console.log('Medições enviadas:', measurements);
@@ -43,6 +52,7 @@ const BodyMeasurements = () => {
       rightCalf: '',
       weight: '',
       height: '',
+      date: null,
     });
   };
 
@@ -178,8 +188,19 @@ const BodyMeasurements = () => {
                 onChange={handleInputChange}
               />
             </div>
+            <div className='Measurements__form-group'>
+              <label htmlFor='date'>Data da medida</label>
+              <DatePicker
+                selected={measurements.date}
+                onChange={handleDateChange}
+                dateFormat='dd/MM/yyyy'
+                name='date'
+                id='date'
+                placeholderText='Selecione a data'
+              />
+            </div>
 
-            <button type='submit'>Salvar Medições</button>
+            <button  className="Save__button" type='submit'>Salvar Medições</button>
             </div>
           </form>
         </div>
