@@ -65,7 +65,7 @@ const Navbar = () => {
             <div className="Navbar__Login-Logout-container">
               {islogin ? (
                 <div className="Navbar__name-container">
-                  <h2>
+                  <h2 onClick={ ()=>router.push("/profile") }>
                     {user.firstName} {user.lastName}
                   </h2>
                   <button

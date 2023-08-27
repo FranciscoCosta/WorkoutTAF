@@ -1,0 +1,24 @@
+.EvolutionReport{
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .EvolutionReport__container{
+        width: 90%;
+        margin-top: 1rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        .EvolutionReport__container__title{
+            h1{
+                font-size: 2rem;
+                font-weight: 500;
+                color: var(--black-color);
+            }
+        }
+    }
+}

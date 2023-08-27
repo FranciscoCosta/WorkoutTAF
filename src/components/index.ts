@@ -7,6 +7,11 @@ import About from "./about";
 import Plans from "./plans";
 import Results from "./results";
 import Testimonials from "./testimonials";
+import GeneralInfo from "./GeneralInfo";
+import BodyMeasurements from "./BodyMeasurements";
+import EvolutionReport from "./EvolutionReport";
+import PhysicalAssessment from "./PhysicalAssessment";
+
 
 export {
     Navbar,
@@ -17,5 +22,10 @@ export {
     About,
     Plans,
     Results,
-    Testimonials
+    Testimonials,
+    GeneralInfo,
+    BodyMeasurements,
+    EvolutionReport,
+    PhysicalAssessment,
+    
 }

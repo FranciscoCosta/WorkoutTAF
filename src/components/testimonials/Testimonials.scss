@@ -42,13 +42,13 @@
               
 
               .Testimonials__content-item{
-                background-color: #c40000;
+                background-color:var(--red-color);
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 width: 100%;
-                height: 260px;
+                height: 265px;
                 margin-right: 20rem;
                 border-radius: 10px;
 
@@ -58,7 +58,7 @@
                 
                     text-align: center;
                     font-size: 1.2rem;
-                    font-weight: 400;
+                    font-weight: 600;
                     color: var(--white-color);
                     margin: 0rem auto;
                     width: 90%;
