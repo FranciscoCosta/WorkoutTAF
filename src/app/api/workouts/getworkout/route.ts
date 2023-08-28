@@ -2,21 +2,22 @@
 import { connect } from "@/dbConfig/dbConfig";
 import Workout from "../../../ models/workoutModel";
 import { NextRequest, NextResponse } from "next/server";
+import { getDataFromToken } from "@/helpers/getDataFromToken";
 
 connect();
 
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
-    const reqBody = await request.json(); 
-    const userId = reqBody.userId;
-    console.log(reqBody);
+    const userId = await getDataFromToken(request);
     const workout = await Workout.find({ userId: userId });
 
-    console.log(workout, "workout-data")
+    console.log(workout);
     
-    if (workout.length === 0) {
+    if (workout.length !== 0) {
       return NextResponse.json(workout, { status: 200 });
     }
+
+    
 
     return NextResponse.json(workout, { status: 201 });
   } catch (error: any) {

@@ -70,13 +70,7 @@ const [userId, setUserId] = useState("");
 
   const getWorkout = async (userId: string) => {
     try {
-      const response = await axios.post("/api/workouts/getworkout", {
-        data: {
-          userId: userId,
-        },
-      });
-      console.log(response, "status aqui")
-
+      const response = await axios.get("/api/workouts/getworkout");
       if (response.status === 201) {
         createWorkout(userId);
       }
@@ -89,8 +83,8 @@ const [userId, setUserId] = useState("");
     event.preventDefault();
 
     try{
-     await getWorkout(userId);
-     const updateMeasurement = await axios.post("/api/workouts/addMeasurements", 
+    await getWorkout(userId);
+    await axios.post("/api/workouts/addMeasurements", 
      {
       userId,
       measurements: measurements,

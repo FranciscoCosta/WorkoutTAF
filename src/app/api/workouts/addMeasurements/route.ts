@@ -6,13 +6,10 @@ import { NextRequest, NextResponse } from "next/server";
 connect();
 
 export async function POST(request: NextRequest) {
-  console.log("POST /api/workouts/addMeasurements");
   try {
     const reqBody = await request.json(); 
     const userId = reqBody.userId;
     const measurements = reqBody.measurements;
-    console.log(userId, "userId");
-    console.log(measurements, "measurements");
 
     const workout = await Workout.findOneAndUpdate(
       { userId: userId },
@@ -21,8 +18,6 @@ export async function POST(request: NextRequest) {
     );
 
     const workoutUser = await Workout.find({ userId: userId });
-    console.log(workoutUser, "workoutUser");
-    console.log(workout);
 
     return NextResponse.json(workout, { status: 201 });
 
