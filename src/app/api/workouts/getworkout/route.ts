@@ -10,9 +10,6 @@ export async function GET(request: NextRequest) {
   try {
     const userId = await getDataFromToken(request);
     const workout = await Workout.find({ userId: userId });
-
-    console.log(workout);
-    
     if (workout.length !== 0) {
       return NextResponse.json(workout, { status: 200 });
     }

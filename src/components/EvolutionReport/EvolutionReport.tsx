@@ -10,6 +10,7 @@ const EvolutionReport = () => {
 
   const [isLoading, setIsLoading] = useState(true);
   const [userId, setUserId] = useState('');
+  const [measures, setMeasures] = useState([]);
 
 useEffect(() => {
   getWorkout()
@@ -19,9 +20,10 @@ const getWorkout = async()=> {
 
   const res = await axios.get("/api/users/me");
   setUserId(res.data.data._id)
+  const getWorkout = await axios.get(`/api/workouts/getworkout`);
+  console.log(getWorkout.data[0].measurements)
+  setMeasures(getWorkout.data[0].measurements)
   setIsLoading(false)
-  const getWorkout = await axios.get(`/api/workouts/getworkout/${userId}`);
-  console.log(getWorkout);
 }
 
 
@@ -32,7 +34,18 @@ const getWorkout = async()=> {
           <h1>Relatório de Evolução</h1>
       </div>
       <div className='EvolutionReport__container__content'>
-
+    {
+      isLoading ? <p>Carregando...</p> :
+      <div className='EvolutionReport__container__content__graphics'>
+        {
+          measures.map((measure, index) => (
+            <p>
+              {measure.weight}
+            </p>
+          ))
+        }
+        </div>
+    }
         </div>
       </div>
 
