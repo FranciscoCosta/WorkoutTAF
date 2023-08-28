@@ -8,9 +8,15 @@ connect();
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json(); 
-    const userId = reqBody.userId;
+    const userId = reqBody.data.userId;
 
-    const workout = await Workout.create({ userId: userId });
+    const workout = await Workout.create({
+      userId: userId,
+      measurements: [],
+      workoutPDF: null,
+      dietPDF: null,
+    });
+
 
     return NextResponse.json(workout, { status: 201 });
 

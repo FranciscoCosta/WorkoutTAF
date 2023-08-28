@@ -61,7 +61,7 @@ const Dashboard = () => {
     }
   };
 
-  const getWorkoutDietFiles = async (userId: string) => {
+  const getWorkout = async (userId: string) => {
     console.log(userId);
     try {
       const response = await axios.post("/api/workouts/getworkout", {
@@ -87,6 +87,7 @@ const Dashboard = () => {
       console.log(error);
     }
   };
+
   const handleDeleteUser = async () => {
     console.log(selectedUserId);
     try {
@@ -120,7 +121,7 @@ const Dashboard = () => {
     userEmail: string,
     userRole: string
   ) => {
-    const a = await getWorkoutDietFiles(userId);
+    const a = await getWorkout(userId);
     setSelectedUserId(userId);
     setSelectedUserName(userName);
     setSelectedUserEmail(userEmail);

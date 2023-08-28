@@ -1,10 +1,16 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './BodyMeasurements.scss';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import { set } from 'mongoose';
 
 const BodyMeasurements = () => {
+
+const [userId, setUserId] = useState("");
+
   const [measurements, setMeasurements] = useState({
     chest: '',
     leftBiceps: '',
@@ -20,6 +26,20 @@ const BodyMeasurements = () => {
     date: null,
   });
 
+ useEffect(() => {
+  getMe()
+ }, [])
+
+
+
+ const getMe = async()=> {
+  const res = await axios.get("/api/users/me");
+  setUserId(res.data.data._id)
+ }
+ 
+
+
+  
   const handleInputChange = (event : any) => {
     const { name, value } = event.target;
     setMeasurements((prevMeasurements) => ({
@@ -35,11 +55,52 @@ const BodyMeasurements = () => {
     }));
   };
 
-  const handleSubmit = (event :any) => {
+  const createWorkout = async (userdId: string) => {
+    try {
+      const response = await axios.post("/api/workouts/createworkout", {
+        data: {
+          userId: userdId,
+        },
+      });
+      console.log(response,"Responseasdasd");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getWorkout = async (userId: string) => {
+    try {
+      const response = await axios.post("/api/workouts/getworkout", {
+        data: {
+          userId: userId,
+        },
+      });
+      console.log(response, "status aqui")
+
+      if (response.status === 201) {
+        createWorkout(userId);
+      }
+    } catch (error : any) {
+      toast.error(error.message)
+    }
+  };
+
+  const handleSubmit = async (event :any) => {
     event.preventDefault();
-    // Aqui você pode fazer o que quiser com os dados, como enviar para o servidor ou realizar algum processamento local
-    console.log('Medições enviadas:', measurements);
-    // Limpa os campos após envio (opcional)
+
+    try{
+     await getWorkout(userId);
+     const updateMeasurement = await axios.post("/api/workouts/addMeasurements", 
+     {
+      userId,
+      measurements: measurements,
+     }
+     )
+     toast.success('Medidas adicionadas com sucesso')
+    }catch(error : any){
+      console.log(error)
+      toast.error(error.response.data.error);
+    }
     setMeasurements({
       chest: '',
       leftBiceps: '',

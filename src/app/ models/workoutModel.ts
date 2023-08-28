@@ -12,6 +12,7 @@ const measurementSchema = new mongoose.Schema({
   rightCalf: Number,
   weight: Number,
   height: Number,
+  date: Date,
 });
 
 const workoutSchema = new mongoose.Schema({
