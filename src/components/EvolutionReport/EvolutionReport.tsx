@@ -1,6 +1,5 @@
 'use client'
 
-
 import React, {useState, useEffect} from 'react'
 import './EvolutionReport.scss'
 import axios from 'axios'
@@ -152,18 +151,17 @@ const getWorkout = async()=> {
   const res = await axios.get("/api/users/me");
   setUserId(res.data.data._id)
   const getWorkout = await axios.get(`/api/workouts/getworkout`);
-  console.log(getWorkout.data[0].measurements)
+  setIsLoading(false)
 
-  const sortedMeasurements = getWorkout.data[0].measurements.sort((a, b) => {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
+  const sortedMeasurements = getWorkout.data[0].measurements.sort((a: any, b: any) => {
+    const dateA : any = new Date(a.date);
+    const dateB : any= new Date(b.date);
     return dateA - dateB;
   });
 
 
   
   setMeasures(sortedMeasurements)
-  setIsLoading(false)
 
   const dateData = await sortedMeasurements.map((measure : any) => {
     return moment(measure.date).format('DD-MM-YYYY');
@@ -235,20 +233,23 @@ const getWorkout = async()=> {
           <h1>Relatório de Evolução</h1>
       </div>
       <div className='EvolutionReport__container__content'>
-    {
-      isLoading ? <p>Carregando...</p> :
-      <div className='EvolutionReport__container__content__graphics'>
-        
+      {
+  isLoading ? (
+    <p>Carregando...</p>
+  ) : dateMeasures.length === 0 ? (
+    <p>Não há medidas para mostrar</p>
+  ) : (
+    <div className='EvolutionReport__container__content__graphics'>
       <Line data={weightData} className='graphic__line'/>
-      <Line data = {heightData} className='graphic__line'/>
-      <Line data = {chestData} className='graphic__line'/>
-      <Line data = {waistData} className='graphic__line'/>
-      <Line data = {bicepsData} className='graphic__line'/>
-      <Line data = {thighData} className='graphic__line'/>
-      <Line data = {calfData} className='graphic__line'/>
-        </div>
-        
-    }
+      <Line data={heightData} className='graphic__line'/>
+      <Line data={chestData} className='graphic__line'/>
+      <Line data={waistData} className='graphic__line'/>
+      <Line data={bicepsData} className='graphic__line'/>
+      <Line data={thighData} className='graphic__line'/>
+      <Line data={calfData} className='graphic__line'/>
+    </div>
+  )
+}
         </div>
       </div>
 

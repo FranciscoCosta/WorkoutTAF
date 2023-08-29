@@ -1,14 +1,19 @@
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+import jwt from "jsonwebtoken";
+import { getRoleFromToken } from "./helpers/getRoleFromToken";
+
+export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
-  const isPublicPath = path === "/login" || path === "/signup" || path === "/verifyemail" || path === "/forgottenpassword" || path === "/resetpassword";
+  const isPublicPath = ["/login", "/signup", "/verifyemail", "/forgottenpassword", "/resetpassword"].includes(path);
 
   const home = path === "/";
 
-  const token = request.cookies.get('token')?.value || ''
+  const isAdminPath = path === "/dashboard";
+
+  const token = request.cookies.get('token')?.value || '';
 
   if (isPublicPath && token) {
     return NextResponse.redirect(new URL("/", request.nextUrl));
@@ -17,8 +22,14 @@ export function middleware(request: NextRequest) {
   if (!isPublicPath && !home && !token) {
     return NextResponse.redirect(new URL("/", request.nextUrl));
   }
+
+  if (isAdminPath && !token) {
+    return NextResponse.redirect(new URL("/", request.nextUrl));  
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/", "/profile", "/login", "/signup", "/verifyemail", "/forgottenpassword", "/resetpassword", '/api/'],
+  matcher: ["/", "/profile", "/login", "/signup", "/verifyemail", "/forgottenpassword", "/resetpassword", '/api/', '/dashboard'],
 };

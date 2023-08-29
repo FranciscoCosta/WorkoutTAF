@@ -10,9 +10,10 @@ export async function GET(request: NextRequest) {
   try {
     const userId = await getDataFromToken(request);
     const user = await User.findOne({_id: userId }).select("-hashPassword");
+    const { passwordHash, ...rest } = user._doc;
     return NextResponse.json({
       message: "Usuário encontrado",
-      data: user,
+      data: rest,
     });
   } catch (error: any) {
     return NextResponse.json(

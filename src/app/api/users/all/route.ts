@@ -6,7 +6,6 @@ connect();
 
 export async function GET(request: NextRequest) {
   try {
-    console.log("GET /api/users/all");
     const users = await User.find({});
 
     return NextResponse.json(users, { status: 200 });

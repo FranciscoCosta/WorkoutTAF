@@ -35,8 +35,24 @@ const Dashboard = () => {
   const [dietFile, setDietFile] = useState(null);
 
   useEffect(() => {
-    getUsers();
+    getMe();
   }, []);
+
+  const getMe = async () => {
+    try {
+      
+      const response = await axios.get("/api/users/me");
+      const { role } = response.data.data;
+      if (role !== "admin") {
+        window.location.href = "/";
+        return;
+      }
+      getUsers();
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
 
   const getUsers = async () => {
     try {
@@ -55,7 +71,6 @@ const Dashboard = () => {
           userId: userdId,
         },
       });
-      console.log(response);
     } catch (error) {
       console.log(error);
     }
