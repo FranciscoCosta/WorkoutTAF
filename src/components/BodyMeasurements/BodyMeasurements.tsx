@@ -35,6 +35,7 @@ const [userId, setUserId] = useState("");
  const getMe = async()=> {
   const res = await axios.get("/api/users/me");
   setUserId(res.data.data._id)
+  getWorkout(res.data.data._id)
  }
  
 

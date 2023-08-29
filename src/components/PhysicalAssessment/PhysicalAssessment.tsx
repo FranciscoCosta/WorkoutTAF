@@ -29,6 +29,13 @@ const PhysicalAssessment = () => {
     const getWorkout = await axios.get(`/api/workouts/getworkout`);
   }
 
+  const handlePlans = () => {
+    window.open(
+      "https://www.mfitpersonal.com.br/index?acao=page&tipo=1&page=18828&isCheckout=false",
+      "_blank"
+    );
+  };
+
   return (
     <div className='PhysicalAssessment'>
       <div className='PhysicalAssessment__container'>
@@ -42,8 +49,9 @@ const PhysicalAssessment = () => {
               {
                 user.role === 'user' ? (
                   <div className='PhysicalAssessment__container__content__workout__user'>
-                      <div>
-                        Plano não pago
+                      <div className='buyplan'>
+                        <h4>Assinar plano de treino Workout<span>TAF</span></h4>
+                        <button onClick={()=>handlePlans()}>Comprar</button>
                       </div>
                     </div>
                 ) : (

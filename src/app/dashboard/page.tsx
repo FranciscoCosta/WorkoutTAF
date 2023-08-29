@@ -25,7 +25,7 @@ const Dashboard = () => {
   const [selectedUserId, setSelectedUserId] = useState(null as any);
   const [selectedUserName, setSelectedUserName] = useState("");
   const [selectedUserEmail, setSelectedUserEmail] = useState("");
-  const [selectedUserRole, setSelectedUserRole] = useState("");
+  const [selectedUserRole, setSelectedUserRole] = useState("user");
   const [selectedUserRoleEdit, setSelectedUserRoleEdit] = useState("");
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -367,9 +367,9 @@ const Dashboard = () => {
                 maxWidth: "200px",
               }}
             >
-              <option value="user">user</option>
-              <option value="client">client</option>
-              <option value="admin">admin</option>
+              <option value="user">usuário</option>
+              <option value="client">cliente</option>
+              <option value="admin">admnistrador</option>
             </select>
 
             <button

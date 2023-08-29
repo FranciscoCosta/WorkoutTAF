@@ -39,6 +39,7 @@ const getMe = async()=> {
   const res = await axios.get("/api/users/me");
   setUser(res.data.data)
   setIsLoading(false)
+  await axios.get(`/api/workouts/getworkout`);
  }
 
  const handleChangePassword = async (e) => {
