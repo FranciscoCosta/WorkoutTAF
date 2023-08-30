@@ -40,7 +40,6 @@ const Dashboard = () => {
 
   const getMe = async () => {
     try {
-      
       const response = await axios.get("/api/users/me");
       const { role } = response.data.data;
       if (role !== "admin") {
@@ -51,8 +50,7 @@ const Dashboard = () => {
     } catch (error) {
       console.log(error);
     }
-
-  }
+  };
 
   const getUsers = async () => {
     try {
@@ -167,20 +165,20 @@ const Dashboard = () => {
   const handleEditWorkout = async () => {
     try {
       const formData = new FormData();
-      formData.append('userId', selectedUserId);
+      formData.append("userId", selectedUserId);
       if (workoutFile) {
-        formData.append('workoutFile', workoutFile);
+        formData.append("workoutFile", workoutFile);
       }
       if (dietFile) {
-        formData.append('dietFile', dietFile);
+        formData.append("dietFile", dietFile);
       }
-  
+
       await axios.patch("/api/workouts/editworkout", formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
       });
-  
+
       getUsers();
       toast.success("Role do usuário editado com sucesso.");
     } catch (error) {
@@ -189,7 +187,6 @@ const Dashboard = () => {
     }
     closeEditModal();
   };
-  
 
   return (
     <div className="Dashboard" id="Dashboard">
@@ -260,7 +257,7 @@ const Dashboard = () => {
             gap: "1.5rem",
           }}
         >
-          <h2 style={{ color: "red", fontSize: "3rem", fontWeight: "600" }}>
+          <h2 style={{ color: "red", fontSize: "2rem", fontWeight: "600" }}>
             Confirmar apagar usuário
           </h2>
           <p
@@ -331,7 +328,14 @@ const Dashboard = () => {
             marginTop: "10%",
           }}
         >
-          <h2 style={{ color: "black", fontSize: "3rem", fontWeight: "600" }}>
+          <h2
+            style={{
+              color: "rgb(0,0,124)",
+              fontSize: "2rem",
+              fontWeight: "600",
+              alignSelf: "center",
+            }}
+          >
             Informação usuário
           </h2>
           <div
@@ -340,19 +344,44 @@ const Dashboard = () => {
               width: "100%",
               flexDirection: "row",
               alignItems: "center",
+              justifyContent: "center",
               gap: "2rem",
+              paddingBottom: "4rem",
+              borderBottom: "1px solid rgba(0,0,0,0.5)",
             }}
           >
-            <p style={{ fontSize: "1.6rem" }}>{selectedUserName}</p>
-            <p style={{ fontSize: "1.6rem" }}>{selectedUserEmail}</p>
-            <p style={{ fontSize: "1.6rem" }}>{selectedUserRole}</p>
+            <p style={{ fontSize: "1.6rem", fontWeight: "500" }}>
+              {selectedUserName}
+            </p>
+            <p style={{ fontSize: "1.6rem", fontWeight: "500" }}>
+              {selectedUserEmail}
+            </p>
+            <p style={{ fontSize: "1.6rem", fontWeight: "500" }}>
+              {selectedUserRole}
+            </p>
           </div>
-          <h2 style={{ color: "black", fontSize: "2.5rem", fontWeight: "500" }}>
+          <h2
+            style={{
+              color: "rgb(0,0,124)",
+              fontSize: "2rem",
+              fontWeight: "600",
+              alignSelf: "center",
+            }}
+          >
             Editar role usuário
           </h2>
           <div
             className="edit-role-modal"
-            style={{ display: "flex", flexDirection: "row", gap: "3rem" }}
+            style={{
+              display: "flex",
+              width: "100%",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2rem",
+              paddingBottom: "4rem",
+              borderBottom: "1px solid rgba(0,0,0,0.5)",
+            }}
           >
             <select
               name="editRole"
@@ -367,8 +396,9 @@ const Dashboard = () => {
                 maxWidth: "200px",
               }}
             >
-              <option value="user">usuário</option>
+              <option value="user">Role</option>
               <option value="client">cliente</option>
+              <option value="user">usuário</option>
               <option value="admin">admnistrador</option>
             </select>
 
@@ -387,17 +417,78 @@ const Dashboard = () => {
             </button>
           </div>
 
-          <div>
-            <input
-              type="file"
-              accept=".pdf"
-              onChange={(event) => setWorkoutFile(event.target.files[0])}
-            />
-            <input
-              type="file"
-              accept=".pdf"
-              onChange={(event) => setDietFile(event.target.files[0])}
-            />
+          <h2
+            style={{
+              color: "rgb(0,0,124)",
+              fontSize: "2rem",
+              fontWeight: "600",
+              alignSelf: "center",
+            }}
+          >
+            Adicionar Plano de treino/Dieta usuário
+          </h2>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "2rem",
+              paddingBottom: "4rem",
+              borderBottom: "1px solid rgba(0,0,0,0.5)",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "2rem",
+              }}
+            >
+              <h4
+                style={{
+                  color: "rgb(0,0,124)",
+                  fontSize: "1.5rem",
+                  fontWeight: "500",
+                  alignSelf: "center",
+                }}
+              >
+                Plano de treino
+              </h4>
+              <input
+                type="file"
+                accept=".pdf"
+                onChange={(event) => setWorkoutFile(event.target.files[0])}
+              />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "2rem",
+              }}
+            >
+              <h4
+                style={{
+                  color: "rgb(0,0,124)",
+                  fontSize: "1.5rem",
+                  fontWeight: "500",
+                  alignSelf: "center",
+                }}
+              >
+                Dieta
+              </h4>
+              <input
+                type="file"
+                accept=".pdf"
+                onChange={(event) => setDietFile(event.target.files[0])}
+              />
+            </div>
           </div>
           <p
             style={{

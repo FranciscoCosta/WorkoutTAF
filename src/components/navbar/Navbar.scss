@@ -32,6 +32,18 @@
         }
 
         .Navbar__links{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            h2{
+                cursor: pointer;
+                margin-right: 0.5rem;
+                color: var(--white-color);
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
 
             .Navbar__Login-Logout-container{
 

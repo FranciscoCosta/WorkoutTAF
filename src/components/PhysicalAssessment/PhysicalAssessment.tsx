@@ -40,7 +40,7 @@ const PhysicalAssessment = () => {
     <div className='PhysicalAssessment'>
       <div className='PhysicalAssessment__container'>
         <div className='PhysicalAssessment__container__title'>
-          <h1>Plano de treino</h1>
+          <h1>Plano WorkoutTAF</h1>
       </div>
       <div className='PhysicalAssessment__container__content'>
         {
@@ -50,8 +50,8 @@ const PhysicalAssessment = () => {
                 user.role === 'user' ? (
                   <div className='PhysicalAssessment__container__content__workout__user'>
                       <div className='buyplan'>
-                        <h4>Assinar plano de treino Workout<span>TAF</span></h4>
-                        <button onClick={()=>handlePlans()}>Comprar</button>
+                        <h4>Apenas membros tem acesso ao Plano WorkoutTAF</h4>
+                        <button onClick={()=>handlePlans()}>Assinar WorkoutTAF</button>
                       </div>
                     </div>
                 ) : (

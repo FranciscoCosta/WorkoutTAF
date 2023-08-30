@@ -45,14 +45,17 @@ const Navbar = () => {
     }
   };
 
-  useEffect(() => { 
+  useEffect(() => {
     checkLogin();
   }, [pathname]);
 
   return (
     <div className="Navbar">
       <div className="Navbar__container">
-        <div className="Navbar__logo-container" onClick={()=>router.push("/")}>
+        <div
+          className="Navbar__logo-container"
+          onClick={() => router.push("/")}
+        >
           <Image
             src={"/assets/logo-wr.png"}
             alt="logo-workouttaf"
@@ -62,10 +65,15 @@ const Navbar = () => {
         </div>
         {!isLoading && (
           <div className="Navbar__links">
+            <div className="Navbar__dashboard">
+              {user.role === "admin" && (
+                <h2 onClick={() => router.push("/dashboard")}>Dashboard</h2>
+              )}
+            </div>
             <div className="Navbar__Login-Logout-container">
               {islogin ? (
                 <div className="Navbar__name-container">
-                  <h2 onClick={ ()=>router.push("/profile") }>
+                  <h2 onClick={() => router.push("/profile")}>
                     {user.firstName} {user.lastName}
                   </h2>
                   <button
