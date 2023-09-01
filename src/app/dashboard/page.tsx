@@ -164,29 +164,33 @@ const Dashboard = () => {
 
   const handleEditWorkout = async () => {
     try {
-      const formData = new FormData();
-      formData.append("userId", selectedUserId);
-      if (workoutFile) {
-        formData.append("workoutFile", workoutFile);
-      }
-      if (dietFile) {
-        formData.append("dietFile", dietFile);
-      }
+        const formData = new FormData();
+        formData.append("userId", selectedUserId);
 
-      await axios.patch("/api/workouts/editworkout", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+        if (workoutFile) {
+            formData.append("workoutFile", workoutFile);
+        }
+        
+        if (dietFile) {
+            formData.append("dietFile", dietFile);
+        }
 
-      getUsers();
-      toast.success("Role do usuário editado com sucesso.");
+        const config = {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        };
+
+        await axios.patch("/api/workouts/editworkout", formData, config);
+        
+        getUsers();
+        toast.success("Role do usuário editado com sucesso.");
     } catch (error) {
-      console.log(error);
-      toast.error("Erro ao editar role do usuário.");
+        console.log(error);
+        toast.error("Erro ao editar role do usuário.");
     }
     closeEditModal();
-  };
+};
 
   return (
     <div className="Dashboard" id="Dashboard">
@@ -461,6 +465,7 @@ const Dashboard = () => {
               <input
                 type="file"
                 accept=".pdf"
+                name="workoutFile"
                 onChange={(event) => setWorkoutFile(event.target.files[0])}
               />
             </div>
@@ -485,6 +490,7 @@ const Dashboard = () => {
               </h4>
               <input
                 type="file"
+                name="dietFile"
                 accept=".pdf"
                 onChange={(event) => setDietFile(event.target.files[0])}
               />

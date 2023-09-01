@@ -17,8 +17,12 @@ const measurementSchema = new mongoose.Schema({
 
 const workoutSchema = new mongoose.Schema({
   userId: String,
-  workoutPDF: Buffer,
-  dietPDF: Buffer,
+  workoutPDF: {
+    data: Buffer,
+  },
+  dietPDF: {
+    data: Buffer,
+  },
   measurements: [measurementSchema], // An array of measurement objects
 });
 
